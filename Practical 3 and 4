@@ -1,0 +1,42 @@
+# Practical no 3
+# Configure NTP Server (NTPd), Install and Configure NTPd, Configure NTP
+Client (Ubuntuand Windows)
+Step 1 :- Installing NFS Server 
+Command :- sudo apt-get -y install nfs-kernel-server
+Step 2 :- Create A New Directory and file In It.
+Command :- mkdir  dir_name
+Step 3 :- Open /etc/exports
+Command :- sudo vi /etc/exports
+Step 4 :- Add Line At End Of file.
+Command :- home/kali/dir_name 127.0.0.1(rw)
+Step 5 :- Use Below Commnand It Will Create A Table And See records
+Command :- sudo export -ra
+Step 6 :- Install nfs-common , if not found.
+Command :- sudo apt-get -y install nfs-common
+Step 7 :- Mount The File And Transfer To Other Directory
+Command :- sudo mount -t nfs 127.0.0.1:[dir_name] [dir_name2]
+
+# Practical no4
+#  SSH Server : Password Authentication Configure SSH Server to manage a server
+from the remote computer, SSH Client : (Ubuntu andWindows)
+Step 1 :- How To Install SSH Server 
+Command :- sudo apt-get install openssh-server
+Enable ssh service
+Command :- sudo sysytemctl start ssh
+And Then Test It By Login Into System Using Command
+Command :- ssh kali@power9-bmc
+First Update And Then Install OpenSSH server.
+Command :- sudo apt update
+Command :- sudo apt upgrade
+Install OpenSSH Server
+Command :- sudo apt install openssh-server
+Verify And Run SSh Service
+Command :- sudo systemctl status ssh
+Configure Firewall And Open Port 22.
+Command :- sudo ufw allow ssh
+Command :- sudo ufw enable
+Command :- sudo ufw status
+Command :- ssh kali@server-ip
+Command :- ssh kali@power9
+Command :- ssh-copy-id kali@power9
+Command :- ssh 127.0.0.1
